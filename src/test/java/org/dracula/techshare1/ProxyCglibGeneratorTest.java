@@ -14,11 +14,11 @@ public class ProxyCglibGeneratorTest {
     @Test
     public void test(){
         Enhancer enhancer = new Enhancer();
-//        enhancer.setSuperclass(SomeSuper.class);
+        enhancer.setSuperclass(SomeSuper.class);
         enhancer.setInterfaces(new Class[]{TDG.class});
         enhancer.setCallback(new SomeInterceptor());
 
-        enhancer.create();
+        Object o = enhancer.create();
 //        System.out.println(o.someFunc());
 
         try {
