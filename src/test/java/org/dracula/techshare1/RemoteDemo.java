@@ -1,5 +1,8 @@
 package org.dracula.techshare1;
 
+/**
+ * 远程调试演示
+ */
 public class RemoteDemo {
 
     public static void main(String[] args){

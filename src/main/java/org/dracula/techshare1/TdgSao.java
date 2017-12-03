@@ -1,5 +1,8 @@
 package org.dracula.techshare1;
 
+/**
+ * 模拟对tdg的调用
+ */
 public class TdgSao {
 
     /**

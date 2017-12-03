@@ -13,6 +13,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Set;
 
+/**
+ * 扫描类
+ * <p>参考org.mybatis.spring.mapper.ClassPathMapperScanner
+ */
 public class Scanner extends ClassPathBeanDefinitionScanner {
 
     private String factoryBeanName;

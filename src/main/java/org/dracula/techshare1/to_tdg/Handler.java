@@ -7,6 +7,9 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ *
+ */
 public class Handler implements InvocationHandler {
 
     private String prefix = null;

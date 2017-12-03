@@ -11,10 +11,8 @@ import org.dracula.techshare1.to_tdg.interaction.TDG;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -22,6 +20,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = TDGTest2.Conf.class)
 public class TDGTest2 {
 
+    /**
+     * 配置
+     */
     @Configuration
     public static class Conf{
 
@@ -54,8 +55,12 @@ public class TDGTest2 {
     @Autowired
     CustomId customId;
 
+    /**
+     * 演进step3,
+     * <p>每个交易一个接口中的函数，带有自动扫描
+     */
     @Test
-    public void step1(){
+    public void step3(){
         //
         TC0016ReqBO tc0016ReqBO = new TC0016ReqBO();
         TC0016RespBO tc0016RespBO1 = tdg.tc0016(tc0016ReqBO);

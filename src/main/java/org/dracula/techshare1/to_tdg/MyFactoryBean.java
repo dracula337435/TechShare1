@@ -6,6 +6,10 @@ import org.springframework.lang.Nullable;
 
 import java.lang.reflect.Proxy;
 
+/**
+ * FactoryBean + 动态代理
+ * @param <T>
+ */
 public class MyFactoryBean<T> implements FactoryBean<T> {
 
     private Class<T> itfc = null;

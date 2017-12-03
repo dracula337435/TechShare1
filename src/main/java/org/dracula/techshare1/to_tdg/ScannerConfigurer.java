@@ -7,6 +7,10 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProce
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.util.StringUtils;
 
+/**
+ * 自动扫描配置类
+ * <p>参考org.mybatis.spring.mapper.MapperScannerConfigurer
+ */
 public class ScannerConfigurer implements BeanDefinitionRegistryPostProcessor {
 
     private String basePackage;
@@ -19,7 +23,6 @@ public class ScannerConfigurer implements BeanDefinitionRegistryPostProcessor {
     }
 
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
-        // 参考org.mybatis.spring.mapper.MapperScannerConfigurer
         // left intentionally blank
     }
 

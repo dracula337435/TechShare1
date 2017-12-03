@@ -9,8 +9,14 @@ import org.junit.Test;
 
 import java.lang.reflect.Method;
 
+/**
+ *
+ */
 public class ProxyCglibGeneratorTest {
 
+    /**
+     * 测试cglib在运行时生成的子类，得到byte[]写文件，再用jd-gui反编译，以供观察
+     */
     @Test
     public void test(){
         Enhancer enhancer = new Enhancer();

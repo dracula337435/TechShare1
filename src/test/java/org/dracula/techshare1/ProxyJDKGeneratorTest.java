@@ -15,7 +15,7 @@ import java.io.IOException;
 public class ProxyJDKGeneratorTest {
 
     /**
-     * 得到动态代理生成的类的.class文件
+     * 得到动态代理生成的类的.class文件，再用jd-gui反编译，以供观察
      */
     @Test
     public void test(){

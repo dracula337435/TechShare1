@@ -9,7 +9,7 @@ public class TDGTest {
     TdgSao tdgSao = new TdgSao();
 
     /**
-     * 最初的调用形式
+     * 最初的调用形式，直接调用tdg
      */
     @Test
     public void step0(){
@@ -18,7 +18,9 @@ public class TDGTest {
         System.out.println(tc0016RespBO);
     }
 
-
+    /**
+     * 演进step1，每个交易一个接口
+     */
     TC0016 tc0016 = null;
     @Test
     public void setp1(){
