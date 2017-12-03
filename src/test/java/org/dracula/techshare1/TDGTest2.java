@@ -63,8 +63,8 @@ public class TDGTest2 {
     public void step3(){
         //
         TC0016ReqBO tc0016ReqBO = new TC0016ReqBO();
-        TC0016RespBO tc0016RespBO1 = tdg.tc0016(tc0016ReqBO);
-        System.out.println(tc0016RespBO1);
+        TC0016RespBO tc0016RespBO = tdg.tc0016(tc0016ReqBO);
+        System.out.println(tc0016RespBO);
         //
         CustomReqBO reqBO = new CustomReqBO();
         CustomRespBO respBO = tdg.customInteraction(reqBO);
@@ -72,7 +72,7 @@ public class TDGTest2 {
         //
         CustomReqBO reqBO2 = new CustomReqBO();
         CustomRespBO respBO2 = customId.customInteraction(reqBO2);
-        System.out.println(respBO);
+        System.out.println(respBO2);
     }
 
 }
