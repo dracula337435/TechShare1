@@ -67,7 +67,11 @@ public class TDGTest2 {
         System.out.println(tc0016RespBO1);
         //
         CustomReqBO reqBO = new CustomReqBO();
-        CustomRespBO respBO = customId.customInteraction(reqBO);
+        CustomRespBO respBO = tdg.customInteraction(reqBO);
+        System.out.println(respBO);
+        //
+        CustomReqBO reqBO2 = new CustomReqBO();
+        CustomRespBO respBO2 = customId.customInteraction(reqBO2);
         System.out.println(respBO);
     }
 
