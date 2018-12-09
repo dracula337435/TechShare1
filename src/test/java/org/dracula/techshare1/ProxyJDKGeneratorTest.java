@@ -1,13 +1,14 @@
 package org.dracula.techshare1;
 
+import org.dracula.techshare1.to_tdg.Handler;
 import org.dracula.techshare1.to_tdg.interaction.TDG;
 import org.junit.Test;
-import sun.misc.ProxyGenerator;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Proxy;
 
 /**
  *
@@ -19,10 +20,18 @@ public class ProxyJDKGeneratorTest {
      */
     @Test
     public void test(){
-        //得到.class文件的byte[]
-        byte[] byteArray = ProxyGenerator.generateProxyClass("SomeName", new Class[]{TDG.class});
-        //写文件
-        writeByteArrayToFile(byteArray, "e:/SomeName.class");
+        Object obj = Proxy.newProxyInstance(TDG.class.getClassLoader(), new Class[]{TDG.class}, new Handler(null, null));
+        System.out.println(obj.getClass());
+    }
+
+    /**
+     * jdk11，sun.misc.ProxyGenerator移入java.lang.reflect包，访问权限为包，用不到了
+     */
+    public void previousTest(){
+//        //得到.class文件的byte[]
+//        byte[] byteArray = ProxyGenerator.generateProxyClass("SomeName", new Class[]{TDG.class});
+//        //写文件
+//        writeByteArrayToFile(byteArray, "e:/SomeName.class");
     }
 
     public static void writeByteArrayToFile(byte[] byteArray, String filePath) {

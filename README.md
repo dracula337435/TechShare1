@@ -1,13 +1,19 @@
 # 技术分享1，动态代理
 
+从实际调用tdg的做法说起，演进  
+1. 17年夏天东某积某某项目的做法
+1. 动态代理
+1. FactoryBean
+1. 自动扫描
+  
 试验了jdk动态代理和cglib动态代理，分别保存运行时生成类，使用jd-gui反编译
 
 ## jdk动态代理
 
-测试```org.dracula.techshare1.ProxyJDKGeneratorTest.test()```试验了jdk动态代理
-```ProxyGenerator.generateProxyClass(...)```源码中可见，是否保存生成的class文件，通过系统变量```jdk.proxy.ProxyGenerator.saveGeneratedFiles```控制  
-启动参数```-Djdk.proxy.ProxyGenerator.saveGeneratedFiles=true```即为生成  
-反编译后
+测试```ProxyJDKGeneratorTest.test()```试验了jdk动态代理  
+```ProxyGenerator.generateProxyClass(...)```源码中可见，是否保存生成的class文件的flag：```saveGeneratedFiles```  
+通过系统变量```jdk.proxy.ProxyGenerator.saveGeneratedFiles```控制，启动参数```-Djdk.proxy.ProxyGenerator.saveGeneratedFiles=true```即为生成  
+反编译后的代码如下：
 ```
 package com.sun.proxy;
 
@@ -145,7 +151,7 @@ public final class $Proxy7
 }
 
 ```
-几个重点
+几个重点：
 1. 生成的类继承了Proxy，其中有属性InvocationHandler h
 1. 生成的类实现了指定接口
 1. 把所有的对指定接口的调用转发给了父类中的h
@@ -154,7 +160,8 @@ public final class $Proxy7
 
 ## cglib动态代理
 
-测试```ProxyCglibGeneratorTest.test()```试验了cglib动态代理
+测试```ProxyCglibGeneratorTest.test()```试验了cglib动态代理  
+反编译后的代码如下：
 ```
 package org.dracula.techshare1;
 
